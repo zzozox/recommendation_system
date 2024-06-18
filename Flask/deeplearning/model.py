@@ -1,17 +1,3 @@
-# Copyright (c) 2020 PaddlePaddle Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import paddle
 import paddle.nn as nn
 import paddle.nn.functional as F
@@ -22,15 +8,6 @@ INF = 1. * 1e12
 
 
 class BoWModel(nn.Layer):
-    """
-    This class implements the Bag of Words Classification Network model to classify texts.
-    At a high level, the model starts by embedding the tokens and running them through
-    a word embedding. Then, we encode these representations with a `BoWEncoder`.
-    Lastly, we take the output of the encoder to create a final representation,
-    which is passed through some feed-forward layers to output a logits (`output_layer`).
-
-    """
-
     def __init__(self,
                  vocab_size,
                  num_classes,
